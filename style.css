@@ -1,0 +1,151 @@
+html{
+    font-size:100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+    overflow-x: hidden; /* 追加: 横スクロールを防止 */
+
+}
+a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+li{
+    list-style: none;
+}
+
+.item-text{
+    text-align: center;
+    margin:3rem auto;
+}
+
+/* コンテンツ */
+.contents{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* 追加: パディングとボーダーを含めたレイアウト計算 */
+}
+
+/* ヘッダー */
+#item-1{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 auto;
+    margin-top:1rem;
+    margin-bottom:1rem;
+    width:100%;
+
+}
+
+#logo{
+    width:50%;
+    margin-left:1.5rem;
+}
+
+/* ハンバーガーメニュー */ 
+.nav-menu {
+    display: none;
+    /* 初期状態で非表示 */
+}
+
+.nav-text{
+    color:white;
+}
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn1{
+    position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+    cursor: pointer;
+    width: 8%;
+    height:30px;
+    border-radius: 5px;
+    background-color: black;
+    
+}
+  
+  /*ボタン内側*/
+  .openbtn1 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    top:0.2rem;
+    left:0.7rem;
+    height: 2px;
+    border-radius: 2px;
+    background:lightseagreen;
+    width: 30%;
+    }
+  
+  .openbtn1 span:nth-of-type(1) {
+    top:10px; 
+  }
+
+  .openbtn1 span:nth-of-type(2) {
+    top:18px;
+  }
+
+  
+  /*activeクラスが付与されると線が回転して×に*/
+  
+  .openbtn1.active span:nth-of-type(1) {
+      top: 8px;
+      left: 12px;
+      transform: translateY(6px) rotate(-45deg);
+      width: 30%;
+  }
+  
+
+  .openbtn1.active span:nth-of-type(2){
+      top: 20px;
+      left: 12px;
+      transform: translateY(-6px) rotate(45deg);
+      width: 30%;
+  }
+
+  /* ナビゲーションメニューの表示アニメーション */
+  .nav-menu.active {
+    display:block;/* ハンバーガーメニューがクリックされたら表示 */
+    background-color: black;
+    border-radius: 10%;
+    width:75%;
+    height:90px;
+    padding-top:1rem;
+    padding-right:1.3rem;
+    text-align: left;
+    margin:0.1rem;
+}
+
+/* メイン */
+/* メイン　ビデオ */
+#main-video {
+    width:100%;
+}
+
+/* カルーセル */
+.carousel-img {
+    width:95%;
+    margin:auto;
+}
+
+/* FEATURE  */
+#container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 35px;
+}
+
+.feature-img {
+    width:100%;
+}
